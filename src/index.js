@@ -8,7 +8,11 @@ import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <div className="text-center heading-form">
+        <h1>Redux CRUD</h1>
+        <p>Creating react crud app using Redux</p>
+      </div>
       {/**
     In our first lesson, we will add router to our app.
     To add it, first of all add dependency on CLI using 
