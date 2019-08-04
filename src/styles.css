@@ -17,3 +17,8 @@
 .form-customization {
   padding: 10px;
 }
+
+.imageClass img {
+  width: 95%;
+  height: 95%;
+}
