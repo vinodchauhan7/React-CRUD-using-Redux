@@ -26,7 +26,6 @@ class LoginComponent extends Component {
     });
     console.log("Done login");
     this.setState({ redirect: true });
-    return <Redirect to="/dashboard" push={true} />;
   };
 
   wrongCredMessage = () => {
