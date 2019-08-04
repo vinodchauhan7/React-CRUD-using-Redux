@@ -6,6 +6,16 @@ import RootRouter from "./utils/rootRouter";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.css";
 
+//import createStore and Provider from redux;
+
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
+import reducer from "./store/mainReducer";
+
+//creating store to save state
+const store = createStore(reducer);
+
 function App() {
   return (
     <div>
@@ -21,6 +31,7 @@ function App() {
       {/** This <Router> is used for adding routing in our app.
       So it must added in root of our app.
     */}
+
       <Router>
         <RootRouter />
       </Router>
@@ -29,4 +40,9 @@ function App() {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
+);
