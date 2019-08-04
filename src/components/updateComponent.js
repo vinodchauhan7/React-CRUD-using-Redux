@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-class RegisterComponent extends Component {
+class UpdateComponent extends Component {
   state = {
     redirect: false,
     message: ""
   };
 
-  handleRegister = event => {
+  handleUpdate = event => {
     event.preventDefault();
     if (
       this.getName.value === "" ||
@@ -25,8 +25,8 @@ class RegisterComponent extends Component {
         password: this.getPassword.value
       };
 
-      this.props.dispatch({ type: "REGISTER", value: data });
-      this.setState({ redirect: true, message: "Successfully Registered." });
+      this.props.dispatch({ type: "UPDATE", value: data });
+      this.setState({ redirect: true, message: "Successfully Updated." });
     } //else ends here
   };
 
@@ -47,7 +47,7 @@ class RegisterComponent extends Component {
       <div className="App centerForm">
         <h3 className="badge badge-danger">{this.state.message}</h3>
         <h1 className="display-6 heading-form">Register</h1>
-        <form className="form-customization" onSubmit={this.handleRegister}>
+        <form className="form-customization" onSubmit={this.handleUpdate}>
           <div className="form-row">
             <div className="form-group col-md-6">
               <label for="inputEmail4">Email</label>
@@ -55,7 +55,7 @@ class RegisterComponent extends Component {
                 type="email"
                 className="form-control"
                 id="inputEmail4"
-                placeholder="vinodc45@gmail.com"
+                defaultValue={this.props.dbState.updateUser.email}
                 ref={input => (this.getEmail = input)}
               />
             </div>
@@ -65,7 +65,7 @@ class RegisterComponent extends Component {
                 type="password"
                 className="form-control"
                 id="inputPassword4"
-                placeholder="Password"
+                defaultValue={this.props.dbState.updateUser.password}
                 ref={input => (this.getPassword = input)}
               />
             </div>
@@ -76,7 +76,7 @@ class RegisterComponent extends Component {
               type="text"
               className="form-control"
               id="inputName"
-              placeholder="Vinod Chauhan"
+              defaultValue={this.props.dbState.updateUser.name}
               ref={input => (this.getName = input)}
             />
           </div>
@@ -86,16 +86,16 @@ class RegisterComponent extends Component {
               type="text"
               className="form-control"
               id="inputAge"
-              placeholder="27"
+              defaultValue={this.props.dbState.updateUser.age}
               ref={input => (this.getAge = input)}
             />
           </div>
           <button type="submit" className="btn btn-primary">
-            Register
+            Update
           </button>
           &nbsp;
-          <Link to="/login">
-            <button className="btn btn-secondary">Login</button>
+          <Link to="/dashboard">
+            <button className="btn btn-secondary">Back</button>
           </Link>
         </form>
       </div>
@@ -103,4 +103,10 @@ class RegisterComponent extends Component {
   }
 }
 
-export default connect()(RegisterComponent);
+const mapStateToProps = state => {
+  return {
+    dbState: state
+  };
+};
+
+export default connect(mapStateToProps)(UpdateComponent);

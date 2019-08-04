@@ -22,3 +22,33 @@
   width: 95%;
   height: 95%;
 }
+
+/**
+table style
+*/
+table {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  width: 90%;
+}
+
+thead th {
+  background-color: #006dcc;
+  color: white;
+}
+
+tbody td {
+  background-color: #eeeeee;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
