@@ -27,24 +27,24 @@ const RegisterComponent = () => {
           </div>
         </div>
         <div className="form-group">
-          <label for="inputAddress">Name</label>
+          <label for="inputName">Name</label>
           <input
             type="text"
             className="form-control"
-            id="inputAddress"
+            id="inputName"
             placeholder="Vinod Chauhan"
           />
         </div>
         <div className="form-group">
-          <label for="inputAddress2">Quote of today</label>
+          <label for="inputAge">Age</label>
           <input
             type="text"
             className="form-control"
-            id="inputAddress2"
-            placeholder="Never give up"
+            id="inputAge"
+            placeholder="27"
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Register
         </button>
         &nbsp;
