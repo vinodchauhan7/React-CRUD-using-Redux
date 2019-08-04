@@ -27,15 +27,18 @@ const RegisterComponent = () => {
           </div>
         </div>
         <div className="form-group">
+
           <label for="inputName">Name</label>
           <input
             type="text"
             className="form-control"
             id="inputName"
+
             placeholder="Vinod Chauhan"
           />
         </div>
         <div className="form-group">
+
           <label for="inputAge">Age</label>
           <input
             type="text"
@@ -45,6 +48,7 @@ const RegisterComponent = () => {
           />
         </div>
         <button type="submit" className="btn btn-primary">
+
           Register
         </button>
         &nbsp;
