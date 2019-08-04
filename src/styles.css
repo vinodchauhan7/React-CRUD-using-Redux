@@ -18,10 +18,12 @@
   padding: 10px;
 }
 
+
 .imageClass img {
   width: 95%;
   height: 95%;
 }
+
 
 /**
 table style
@@ -52,3 +54,4 @@ tr th:last-child {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
+
