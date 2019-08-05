@@ -6,7 +6,8 @@ import { Redirect } from "react-router-dom";
 class DashBoardComponent extends Component {
   state = {
     isAdmin: false,
-    isUpdating: false
+    isUpdating: false,
+    logout: false
   };
 
   handleUpdate = data => {
@@ -16,18 +17,28 @@ class DashBoardComponent extends Component {
   };
 
   handleDelete = data => {
-    //this.props.dispatch({ type: "DELETE", value: data });
+    this.props.dispatch({ type: "DELETE", value: data });
   };
 
   handleAdminState = () => {
     this.setState({ isAdmin: true });
   };
 
+  handlelogout = () => {
+    this.props.dispatch({ type: "LOGOUT", value: "delete" });
+    this.setState({ logout: true });
+  };
+
   componentDidMount = () => {
     this.setState({ isUpdating: false });
+    this.setState({ logout: false });
   };
 
   render() {
+    if (this.state.logout) {
+      return <Redirect to="/" push={true} />;
+    }
+
     if (this.state.isUpdating) {
       return <Redirect to="/update" push={true} />;
     }
@@ -111,6 +122,9 @@ class DashBoardComponent extends Component {
             </div>
           </div>
         )}
+        <button class="btn btn-danger" onClick={() => this.handlelogout()}>
+          Logout
+        </button>
       </div>
     );
   } //render ends here
