@@ -1,7 +1,7 @@
 Build a React-Redux App - CRUD
 👋 hi there! My name is Vinod Chauhan and this is the source material for Build a ReactJS Redux App!
 
-All Contributors PRs Welcome Code of Conduct
+All Contributors PRs Welcome to my github
 
 To verify things are set up properly, you can run this:
 
