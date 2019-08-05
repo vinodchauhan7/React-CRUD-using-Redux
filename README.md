@@ -28,9 +28,12 @@ After you've made sure to have the correct things (and versions) installed, you 
 git clone https://github.com/vinodchauhan7/React-CRUD-using-Redux.git
 
 # then do this:
-cd folderName
+cd React-CRUD-using-Redux/
+
 npm install
+
 npm start
+
 This may take a few minutes. If you get any errors, please read through them and see if you can find out what the problem is. You may also want to look at Troubleshooting. If you can't work it out on your own then please file an issue and provide all the output from the commands you ran (even if it's a lot).
 
 Running the app
