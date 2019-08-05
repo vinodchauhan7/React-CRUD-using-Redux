@@ -39,8 +39,8 @@ class UpdateComponent extends Component {
 
   render() {
     if (this.state.redirect) {
-      alert("Registered Successfully");
-      return <Redirect to="/" push={true} />;
+      alert("Updated Successfully");
+      return <Redirect to="/dashboard" push={true} />;
     }
 
     return (

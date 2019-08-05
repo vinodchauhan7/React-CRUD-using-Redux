@@ -24,29 +24,50 @@ const initialState = {
  * @param {*} action
  */
 const reducer = (state = initialState, action) => {
-  let newState = { ...initialState };
+  let newState = { ...state };
   switch (action.type) {
     case "LOGIN":
       console.log(`${action.value}`);
-      newState = handleLogin(newState, action.value);
-      console.log(newState);
-      return newState;
+      let newState1 = handleLogin(newState, action.value);
+      console.log(newState1);
+      state = { ...newState1 };
+      return state;
     case "UPDATE_USER":
       console.log("Update user");
       newState.updateUser = action.value;
-      return newState;
+      state = { ...newState };
+      return state;
     case "UPDATE":
       console.log("update");
-      return newState;
+      newState1 = handleUpdate(newState, action.value);
+      newState1.updateUser = {};
+      state = { ...newState1 };
+      console.log(state);
+      return state;
+    case "DELETE":
+      console.log("delete");
+      const newUsers = newState.allUsers.filter(
+        d => d.email !== action.value.email
+      );
+      newState.allUsers = newUsers;
+      state = { ...newState };
+      console.log(state);
+      return state;
     case "REGISTER":
       console.log("Register");
       const data = action.value;
       console.log(data);
       newState.allUsers.push(data);
-      console.log(newState);
-      return newState;
+      state = { ...newState };
+      console.log(state);
+      return state;
+    case "LOGOUT":
+      console.log("logout");
+      newState.currentUser = {};
+      state = { ...newState };
+      return state;
     default:
-      return newState;
+      return state;
   }
 };
 
