@@ -42,6 +42,9 @@ To get the app up and running (and really see if it worked), run:
 npm start
 This should start up your browser. If you're familiar, this is a standard react-scripts application.
 
+Use (admin@gmail.com/admin) to see admin dashboard by default.
+use (vinodc45@gmail.com/vinod) to see user dashboard.
+
 
 Vinod Chauhan
 This project follows the all-contributors specification. Contributions of any kind welcome!
